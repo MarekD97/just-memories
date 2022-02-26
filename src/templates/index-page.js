@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
+import Header from "../components/Header";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -14,6 +14,7 @@ export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
+  textAlign,
   mainpitch,
   description,
   intro,
@@ -22,8 +23,8 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      {/* <section className="section section--gradient">
+      <Header image={heroImage} title={title} subheading={subheading} textAlign={textAlign} />
+      <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
@@ -69,7 +70,7 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
@@ -79,6 +80,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  textAlign: PropTypes.object,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -96,6 +98,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        textAlign={frontmatter.textAlign}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -126,6 +129,7 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        textAlign
         mainpitch {
           title
           description

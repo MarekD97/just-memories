@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -9,15 +9,29 @@ import closeMenu from '../img/close_black_24dp.svg';
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const toggleHamburger = () => {
     const newState = !active;
     setActive(newState);
   }
 
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
     <nav
-      className="navbar"
+      className={`navbar ${scrollPosition > 80 ? "navbar--fixed" : ""}`}
       role="navigation"
       aria-label="Main"
     >

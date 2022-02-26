@@ -1,0 +1,51 @@
+.header {
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--gray-color);
+
+    &__wrapper {
+        position: relative;
+        display: grid;
+        grid-area: 1/1;
+        margin: 0 6.25em;
+        width: 30%;
+    }
+
+    &__title,
+    &__subheading {
+        color: var(--body-color);
+        padding: 0.25em;
+        text-shadow: 0 0 2px var(--dark-color);
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 3em;
+        text-transform: uppercase;
+    }
+
+    &__subheading {
+        margin-top: 0.5rem;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin: 3.75rem auto;
+        align-items: center;
+        text-align: center;
+        width: 65%;
+        h2 {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+    }
+}

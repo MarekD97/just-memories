@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Just Memories | Strona główna",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+      "Wspomnienia to najpiękniejsze co pozostaje z nami na zawsze. Przeszłość jak żywa trwa zapisana w naszych wspomnieniach.",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
