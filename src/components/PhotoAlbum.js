@@ -22,7 +22,7 @@ const PhotoAlbum = ({
                     image={item.image}
                     objectFit={"cover"}
                     loading="lazy"
-                    layout="fullWidth"
+                    layout="constrained"
                     alt={item.alt}
                     formats={["auto", "webp", "avif"]}
                 />
