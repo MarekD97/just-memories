@@ -1,0 +1,40 @@
+.album-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 15%;
+    background-color: var(--gray-color);
+}
+
+.album-image {
+    // height: 18.75rem;
+    transition: transform 350ms ease-in-out;
+
+    &:hover {
+        transform: rotate(2deg);
+    }
+    &--center {
+        transform: scale(1.15);
+        z-index: 1;
+
+        &:hover {
+            transform: scale(1.15) rotate(2deg);
+        }
+    }
+
+}
+
+@include desktop {
+    .album-container {
+        flex-direction: row;
+        padding: 8rem 4.375rem;
+    }
+
+    .album-image {
+        &--center {
+            transform: scale(1.5);
+            &:hover {
+                transform: scale(1.5) rotate(2deg);
+            }
+        }
+    }
+}

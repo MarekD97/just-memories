@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import "../sass/main.scss";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -15,7 +16,7 @@ const TemplateWrapper = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
 
-        <link
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href={`${withPrefix("/")}img/apple-touch-icon.png`}
@@ -37,7 +38,7 @@ const TemplateWrapper = ({ children }) => {
           rel="mask-icon"
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
-        />
+        /> */}
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
@@ -48,6 +49,20 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
+      <StaticImage 
+        src="../img/eucalyptus_01.png"
+        alt=""
+        placeholder="blurred"
+        layout="constrained"
+        width={600}
+        height={600}
+        aspectRatio={1/1}
+        style={{
+          position: "absolute",
+          right: 0,
+          width: "25vw"
+        }}
+      />
       <Navbar />
       <div>{children}</div>
       <Footer />

@@ -2,36 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import instagram from '../img/social/instagram.svg';
-import facebook from '../img/social/facebook.svg';
-import burgerMenu from '../img/menu_black_24dp.svg';
-import closeMenu from '../img/close_black_24dp.svg';
+import instagram from '../img/icons/instagram.svg';
+import facebook from '../img/icons/facebook.svg';
+import burgerMenu from '../img/icons/menu.svg';
+import closeMenu from '../img/icons/menu_close.svg';
+
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   const toggleHamburger = () => {
     const newState = !active;
     setActive(newState);
   }
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    }
-  }, []);
-
   return (
     <nav
-      className={`navbar ${scrollPosition > 80 ? "navbar--fixed" : ""}`}
+      className="navbar"
       role="navigation"
       aria-label="Main"
     >
@@ -53,13 +40,13 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-menu">
-          <Link className="navbar-menu__item" to="/portfolio">
+          <Link className="navbar-menu__item" to="/portfolio/">
             Portfolio
           </Link>
-          <Link className="navbar-menu__item" to="/cennik">
+          <Link className="navbar-menu__item" to="/cennik/">
             Cennik
           </Link>
-          <Link className="navbar-menu__item" to="/o-mnie">
+          <Link className="navbar-menu__item" to="/o-mnie/">
             O mnie
           </Link>
         </div>
@@ -93,13 +80,13 @@ const Navbar = () => {
       >
         <button
           className="primary-btn"
-          onClick={() => navigate("/logowanie")}
+          onClick={() => window.location.href='/admin'}
         >
           Strefa klienta
         </button>
         <button
           className="btn"
-          onClick={() => navigate("/kontakt")}
+          onClick={() => navigate("/kontakt/")}
         >
           Kontakt
         </button>

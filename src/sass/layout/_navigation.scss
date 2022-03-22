@@ -2,18 +2,12 @@
     display: flex;
     flex-direction: column;
     padding: 0 1.875em;
-    background-color: var(--body-color);
+    // background-color: var(--body-color);
 
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
-    z-index: 1;
-    &--fixed {
-        .navbar-brand div {
-            width: 80px;
-            height: 80px;
-        }
-    }
+    z-index: 2;
 }
 
 .navbar-start,
@@ -22,7 +16,7 @@
     justify-content: center;
     align-items: center;
     order: 2;
-    animation: open 350ms ease-in;
+    // animation: open 350ms ease-in;
 }
 .navbar-start {
     flex-direction: column-reverse;
@@ -64,7 +58,7 @@
         text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;
-        transition: transform 150ms ease;
+        // transition: transform 150ms ease;
         &:hover,
         &:focus {
             transform: scale(1.25);
@@ -78,7 +72,7 @@
     justify-content: space-between;
     align-items: center;
     div {
-        transition: all 350ms ease;
+        // transition: all 350ms ease;
         width: 105px;
         height: 105px;
     }

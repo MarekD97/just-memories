@@ -1,0 +1,3 @@
+---
+templateKey: price-list-page
+---

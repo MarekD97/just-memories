@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Parallax } from 'react-parallax';
 
 export default function Header(props) {
   const {
@@ -16,7 +15,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <header className="header">
-        <Parallax
+        <div
           strength={-100}
           style={{
             gridArea: "1/1",
@@ -57,7 +56,7 @@ export default function Header(props) {
               formats={["auto", "webp", "avif"]}
             />
           )}
-        </Parallax>
+        </div>
         {(title || subheading) && (
           <div
             className="header__wrapper"
@@ -78,17 +77,6 @@ export default function Header(props) {
             )}
           </div>
         )}
-        <Parallax
-          strength={-100}
-          className="header__content"
-        >
-          <h2>
-            Just memories
-          </h2>
-          <h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </h3>
-        </Parallax>
       </header>
     </React.Fragment>
   );
@@ -98,7 +86,7 @@ Header.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   height: PropTypes.number,
-  textAlign: PropTypes.object,
+  textAlign: PropTypes.string,
   subheading: PropTypes.string,
   imgPosition: PropTypes.string,
 };
