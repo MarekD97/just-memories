@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -9,7 +9,7 @@ import closeMenu from '../img/icons/menu_close.svg';
 
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = React.useState(false);
 
   const toggleHamburger = () => {
     const newState = !active;
@@ -21,6 +21,7 @@ const Navbar = () => {
       className="navbar"
       role="navigation"
       aria-label="Main"
+      id="navigation"
     >
       <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
         <div className="navbar-social">
@@ -79,13 +80,13 @@ const Navbar = () => {
         className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}
       >
         <button
-          className="primary-btn"
+          className="button button--primary"
           onClick={() => window.location.href='/admin'}
         >
           Strefa klienta
         </button>
         <button
-          className="btn"
+          className="button"
           onClick={() => navigate("/kontakt/")}
         >
           Kontakt

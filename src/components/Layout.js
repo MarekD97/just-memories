@@ -9,8 +9,16 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+
+  const containerStyle = {
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  }
+
   return (
-    <div>
+    <div style={containerStyle}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -64,7 +72,7 @@ const TemplateWrapper = ({ children }) => {
         }}
       />
       <Navbar />
-      <div>{children}</div>
+      <main>{children}</main>
       <Footer />
     </div>
   );

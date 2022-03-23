@@ -1,4 +1,4 @@
-.btn {
+.button {
     padding: 0.594em;
     width: 11.25em;
     border: 1px solid var(--dark-color);
@@ -13,10 +13,16 @@
     &:focus {
         padding: 1.219em 0.594em;
     }
-}
 
-.primary-btn {
-    @extend .btn;
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
+    &--primary {
+        border: 1px solid var(--primary-color);
+        background-color: var(--primary-color);
+    }
+
+    &--no-transition {
+        &:hover,
+        &:focus {
+            padding: 0.594em;
+        }
+    }
 }

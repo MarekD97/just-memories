@@ -4,10 +4,8 @@ import Layout from "../components/Layout"
 const AboutMePage = () => {
     return (
         <Layout>
-            <div
-                style={{minHeight: "75vh"}}
-            >
-                Kontakt
+            <div>
+                O mnie
             </div>
         </Layout>
     )

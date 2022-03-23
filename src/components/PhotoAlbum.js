@@ -26,8 +26,7 @@ const PhotoAlbum = ({
                     alt={item.alt}
                     formats={["auto", "webp", "avif"]}
                 />
-            ))
-                
+            ))   
             }
         </div>
     );

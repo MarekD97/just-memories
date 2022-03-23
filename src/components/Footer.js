@@ -4,9 +4,9 @@ import email from '../img/icons/email.svg';
 import phone from '../img/icons/phone.svg';
 import facebook from '../img/icons/facebook.svg';
 import instagram from '../img/icons/instagram.svg'
-import { Link, navigate } from 'gatsby';
+import arrowUp from '../img/icons/arrow_up.svg';
 
-import { StaticImage } from 'gatsby-plugin-image';
+import { Link, navigate } from 'gatsby';
 
 const Footer = () => {
   return (
@@ -29,8 +29,12 @@ const Footer = () => {
         aspectRatio={1/1}
       /> */}
       <div className="footer__row" style={{alignSelf: 'flex-end'}}>
-        <a className="primary-btn" href="#">
-          /\
+        <a className="button button--primary button--no-transition" href="#navigation" style={{width: 'auto'}}>
+        <img 
+            src={arrowUp}
+            alt="Na początek strony" 
+            style={{ width: "2.5em", height: "2.5em" }}
+          />
         </a>
       </div>
       <div className="footer__row">
@@ -74,13 +78,13 @@ const Footer = () => {
         </div>
         <div className="footer__menu">
           <button
-            className="primary-btn"
+            className="button button--primary button--no-transition"
             onClick={() => window.location.href='/admin'}
           >
             Strefa klienta
           </button>
           <button
-            className="btn"
+            className="button button--no-transition"
             onClick={() => navigate("/kontakt/")}
           >
             Kontakt

@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 const ProjectsPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
 
+    console.log(frontmatter);
+
     const styleContainer = {
         width: '50%',
         height: '400px',
