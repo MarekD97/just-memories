@@ -1,3 +1,3 @@
 ---
-templateKey: projects-page
+templateKey: album-page
 ---
