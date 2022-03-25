@@ -16,11 +16,11 @@ main:
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
     est laborum.
   images:
-    - image: /img/chemex.jpg
+    - image: /img/rectangle-3.png
       alt: Opis
-    - image: /img/home-jumbotron.jpg
+    - image: /img/Rectangle 7.png
       alt: Opis
-    - image: /img/jumbotron.jpg
+    - image: /img/IMG_6132.jpg
       alt: Opis
 footerImage: /img/Rectangle 7.png
 ---

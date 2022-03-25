@@ -1,0 +1,29 @@
+.about-me {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.875em;
+
+    &__img {
+        width: 100%;
+    }
+
+    &__h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1em 0;
+    }
+
+    &__h3 {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 1.5em 0 2em;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        max-width: 75%;
+        &__img {
+            margin-right: 2.5em;
+        }
+    }
+}
