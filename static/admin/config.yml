@@ -70,3 +70,60 @@ collections:
                 ],
             }
           - { label: "Zdjęcie - stopka", name: footerImage, widget: image }
+      - file: "src/pages/cennik/index.md"
+        label: "Cennik"
+        name: "priceList"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "price-list-page",
+            }
+          - {
+              label: "Pakiet",
+              name: "session",
+              widget: list,
+              fields: 
+              [
+                { label: Tytuł, name: heading, widget: string },
+                { label: Podtytuł, name: subheading, widget: string },
+                { label: Opis, name: content, widget: markdown },
+                { label: Koszt, name: price, widget: number },
+              ],
+            }
+      - file: "src/pages/o-mnie/index.md"
+        label: "O mnie"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Nagłówek", name: heading, widget: string }
+          - { label: "Opis", name: content, widget: text }
+          - { label: "Zdjęcie", name: image, widget: image }
+  - name: "posts"
+    label: "Portfolio"
+    label_singular: "Album"
+    folder: "src/pages/portfolio"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "portfolio-post",
+        }
+      - { label: "Tytuł", name: title, widget: string }
+      - { label: "Opis", name: description, widget: string }
+      - {
+          label: "Zdjęcia",
+          name: images,
+          widget: list,
+          field: {  label: "Zdjęcie", name: image, widget: image }
+        }

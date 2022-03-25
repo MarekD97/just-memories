@@ -6,9 +6,7 @@ import Layout from '../components/Layout';
 import AlbumCard from '../components/AlbumCard';
 
 const AlbumPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark;
-
-    console.log(frontmatter);
+    // const { frontmatter } = data.markdownRemark;
 
     const image = "https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty-300x240.jpg";
     const loopCard = (count) => {

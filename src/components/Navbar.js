@@ -63,6 +63,7 @@ const Navbar = () => {
             width={130}
             height={130}
             placeholder="blurred"
+            loading="eager"
           />
         </Link>
         <button
