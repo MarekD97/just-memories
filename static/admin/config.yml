@@ -70,15 +70,15 @@ collections:
                 ],
             }
           - { label: "Zdjęcie - stopka", name: footerImage, widget: image }
-      - file: "src/pages/cennik/index.md"
-        label: "Cennik"
-        name: "priceList"
+      - file: "src/pages/oferta/index.md"
+        label: "Oferta"
+        name: "offer"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "price-list-page",
+              default: "offer-page",
             }
           - {
               label: "Pakiet",

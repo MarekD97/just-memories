@@ -1,0 +1,41 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 1.875em;
+    font-size: 1rem;
+
+    &__header {
+        font-size: 1.5rem;
+        margin: 1em 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        margin: 0.5em 0;
+        padding: 0.5em;
+    }
+
+    &__textarea {
+        resize: vertical;
+        min-height: 8em;
+    }
+
+    &__submit {
+        align-self: flex-end;
+    }
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5em 3.75em;
+
+        &__form {
+            grid-column: 1;
+        }
+    }
+    
+}

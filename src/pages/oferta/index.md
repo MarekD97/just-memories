@@ -1,5 +1,5 @@
 ---
-templateKey: price-list-page
+templateKey: offer-page
 session:
     - heading: Pakiet Standard
       subheading: sesja w plenerze

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout"
 
-const PriceListPage = () => {
+const OfferPage = () => {
     return (
         <Layout>
            <div
@@ -13,4 +13,4 @@ const PriceListPage = () => {
     )
 }
 
-export default PriceListPage;
+export default OfferPage;
