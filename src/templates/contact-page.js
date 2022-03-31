@@ -10,27 +10,21 @@ function encode(data) {
 
 // eslint-disable-next-line
 export const ContactPageTemplate = () => {
-  const [state, setState] = React.useState({});
+  const [formState, setFormState] = React.useState({});
 
   const handleChange = (event) => {
-    setState({ [event.target.name]: event.target.value });
+    setFormState({ ...formState, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(
-      encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      })
-    );
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        ...state,
+        ...formState,
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
