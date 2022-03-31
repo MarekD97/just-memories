@@ -1,12 +1,11 @@
-import React from 'react';
-import { Link, navigate } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from "react";
+import { Link, navigate } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
-import instagram from '../img/icons/instagram.svg';
-import facebook from '../img/icons/facebook.svg';
-import burgerMenu from '../img/icons/menu.svg';
-import closeMenu from '../img/icons/menu_close.svg';
-
+import instagram from "../img/icons/instagram.svg";
+import facebook from "../img/icons/facebook.svg";
+import burgerMenu from "../img/icons/menu.svg";
+import closeMenu from "../img/icons/menu_close.svg";
 
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
@@ -14,25 +13,26 @@ const Navbar = () => {
   const toggleHamburger = () => {
     const newState = !active;
     setActive(newState);
-  }
+  };
 
   return (
-    <nav
-      className="navbar"
-      role="navigation"
-      aria-label="Main"
-      id="navigation"
-    >
+    <nav className="navbar" role="navigation" aria-label="Main" id="navigation">
       <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
         <div className="navbar-social">
-          <a className="navbar-menu__item" href="https://www.instagram.com/justmemoriesphoto">
+          <a
+            className="navbar-menu__item"
+            href="https://www.instagram.com/justmemoriesphoto"
+          >
             <img
               src={instagram}
               alt="Instagram"
               style={{ width: "1.5em", height: "1.5em" }}
             />
           </a>
-          <a className="navbar-menu__item" href="https://www.facebook.com/JustMemoriesPhoto">
+          <a
+            className="navbar-menu__item"
+            href="https://www.facebook.com/JustMemoriesPhoto"
+          >
             <img
               src={facebook}
               alt="Facebook"
@@ -44,17 +44,15 @@ const Navbar = () => {
           <Link className="navbar-menu__item" to="/portfolio/">
             Portfolio
           </Link>
-          <Link className="navbar-menu__item" to="/cennik/">
-            Cennik
+          <Link className="navbar-menu__item" to="/oferta/">
+            Oferta
           </Link>
           <Link className="navbar-menu__item" to="/o-mnie/">
             O mnie
           </Link>
         </div>
       </div>
-      <div
-        className="navbar-brand"
-      >
+      <div className="navbar-brand">
         <Link to="/">
           <StaticImage
             src="../img/logo.png"
@@ -77,24 +75,19 @@ const Navbar = () => {
           />
         </button>
       </div>
-      <div
-        className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}
-      >
+      <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
         <button
           className="button button--primary"
-          onClick={() => window.location.href='/admin'}
+          onClick={() => (window.location.href = "/admin")}
         >
           Strefa klienta
         </button>
-        <button
-          className="button"
-          onClick={() => navigate("/kontakt/")}
-        >
+        <button className="button" onClick={() => navigate("/kontakt/")}>
           Kontakt
         </button>
       </div>
-    </nav >
+    </nav>
   );
-}
+};
 
 export default Navbar;
