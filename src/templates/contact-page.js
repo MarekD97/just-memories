@@ -10,7 +10,7 @@ function encode(data) {
 
 // eslint-disable-next-line
 export const ContactPageTemplate = () => {
-  const [state, setState] = React.useState({ isValidated: false });
+  const [state, setState] = React.useState({});
 
   const handleChange = (event) => {
     setState({ [event.target.name]: event.target.value });
@@ -19,6 +19,12 @@ export const ContactPageTemplate = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
+    console.log(
+      encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      })
+    );
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -39,6 +45,7 @@ export const ContactPageTemplate = () => {
         action="/kontakt/success"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        name="contact"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -49,6 +56,7 @@ export const ContactPageTemplate = () => {
           className="contact__input"
           id="form_name"
           placeholder="Imię i nazwisko"
+          onChange={handleChange}
         />
         <input
           type="tel"
@@ -56,6 +64,7 @@ export const ContactPageTemplate = () => {
           className="contact__input"
           id="form_phone"
           placeholder="Telefon"
+          onChange={handleChange}
         />
         <input
           type="email"
@@ -63,6 +72,7 @@ export const ContactPageTemplate = () => {
           className="contact__input"
           id="form_email"
           placeholder="Email"
+          onChange={handleChange}
         />
         <textarea
           type="text"
@@ -70,6 +80,7 @@ export const ContactPageTemplate = () => {
           className="contact__input contact__textarea"
           id="form_message"
           placeholder="Wiadomość"
+          onChange={handleChange}
           rows={4}
         />
         <input
