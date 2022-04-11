@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import email from '../img/icons/email.svg';
-import phone from '../img/icons/phone.svg';
-import facebook from '../img/icons/facebook.svg';
-import instagram from '../img/icons/instagram.svg'
-import arrowUp from '../img/icons/arrow_up.svg';
+import email from "../img/icons/email.svg";
+import phone from "../img/icons/phone.svg";
+import facebook from "../img/icons/facebook.svg";
+import instagram from "../img/icons/instagram.svg";
+import arrowUp from "../img/icons/arrow_up.svg";
 
-import { Link, navigate } from 'gatsby';
+import { Link, navigate } from "gatsby";
 
 const Footer = () => {
   return (
@@ -28,58 +28,56 @@ const Footer = () => {
         height={600}
         aspectRatio={1/1}
       /> */}
-      <div className="footer__row" style={{alignSelf: 'flex-end'}}>
-        <a className="button button--primary button--no-transition" href="#navigation" style={{width: 'auto'}}>
-        <img 
+      <div className="footer__row" style={{ alignSelf: "flex-end" }}>
+        <a
+          className="button button--primary button--no-transition"
+          href="#navigation"
+          style={{ width: "auto" }}
+        >
+          <img
             src={arrowUp}
-            alt="Na początek strony" 
+            alt="Na początek strony"
             style={{ width: "2.5em", height: "2.5em" }}
           />
         </a>
       </div>
       <div className="footer__row">
         <div className="footer__contact">
-        <h3>Magdalena Juwko</h3>
-        <a href="mailto:kontakt@justmemoriesphoto.pl">
-          <img 
-            src={email}
-            alt="e-mail" 
-            style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
-          />
-          kontakt@justmemoriesphoto.pl
-        </a>
-        <a href="https://www.facebook.com/JustMemoriesPhoto/">
-          <img 
-            src={facebook}
-            alt="facebook" 
-            style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
-          />
-          facebook.com/JustMemoriesPhoto/
-        </a>
-        <a href="tel:612345678">
-          <img 
-            src={phone}
-            alt="phone" 
-            style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
-          />
+          <h3>Magdalena Juwko</h3>
+          <a href="mailto:kontakt@justmemoriesphoto.pl">
+            <img
+              src={email}
+              alt="e-mail"
+              style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
+            />
+            kontakt@justmemoriesphoto.pl
+          </a>
+          <a href="https://www.facebook.com/JustMemoriesPhoto/">
+            <img
+              src={facebook}
+              alt="facebook"
+              style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
+            />
+            facebook.com/JustMemoriesPhoto/
+          </a>
+          <a href="tel:612345678">
+            <img
+              src={phone}
+              alt="phone"
+              style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
+            />
             612 345 678
-        </a>
+          </a>
         </div>
         <div className="footer__menu">
-          <Link to="/portfolio/">
-            Portfolio
-          </Link>
-          <Link to="/cennik/">
-            Cennik
-          </Link>
-          <Link to="/o-mnie/">
-            O mnie
-          </Link>
+          <Link to="/portfolio/">Portfolio</Link>
+          <Link to="/oferta/">Oferta</Link>
+          <Link to="/o-mnie/">O mnie</Link>
         </div>
         <div className="footer__menu">
           <button
             className="button button--primary button--no-transition"
-            onClick={() => window.location.href='/admin'}
+            onClick={() => (window.location.href = "/admin")}
           >
             Strefa klienta
           </button>

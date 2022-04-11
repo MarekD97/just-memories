@@ -11,7 +11,7 @@ backend:
 local_backend: true
 media_folder: static/img
 public_folder: /img
-locale: 'pl'
+locale: "pl"
 
 collections:
   - name: "pages"
@@ -31,23 +31,23 @@ collections:
               label: "Główny baner",
               name: intro,
               widget: object,
-              fields: 
-              [
-                { label: Tytuł, name: heading, widget: string },
-                { label: Podtytuł, name: subheading, widget: string },
-                {
-                  label: "Wyrównanie tytułu", 
-                  name: "align", 
-                  widget: "select",
-                  options: 
-                  [
-                    { label: "Do lewej", value: "left" },
-                    { label: "Do środka", value: "center" },
-                    { label: "Do prawej", value: "right" },
-                  ],
-                },
-                { label: "Zdjęcie w tle", name: image, widget: image },
-              ]
+              fields:
+                [
+                  { label: Tytuł, name: heading, widget: string },
+                  { label: Podtytuł, name: subheading, widget: string },
+                  {
+                    label: "Wyrównanie tytułu",
+                    name: "align",
+                    widget: "select",
+                    options:
+                      [
+                        { label: "Do lewej", value: "left" },
+                        { label: "Do środka", value: "center" },
+                        { label: "Do prawej", value: "right" },
+                      ],
+                  },
+                  { label: "Zdjęcie w tle", name: image, widget: image },
+                ],
             }
           - {
               label: Sekcja główna,
@@ -82,15 +82,15 @@ collections:
             }
           - {
               label: "Pakiet",
-              name: "session",
+              name: "offers",
               widget: list,
-              fields: 
-              [
-                { label: Tytuł, name: heading, widget: string },
-                { label: Podtytuł, name: subheading, widget: string },
-                { label: Opis, name: content, widget: markdown },
-                { label: Koszt, name: price, widget: number },
-              ],
+              fields:
+                [
+                  { label: Tytuł, name: heading, widget: string },
+                  { label: Podtytuł, name: subheading, widget: string },
+                  { label: Opis, name: content, widget: markdown },
+                  { label: Koszt, name: price, widget: number },
+                ],
             }
       - file: "src/pages/o-mnie/index.md"
         label: "O mnie"
@@ -106,9 +106,9 @@ collections:
           - { label: "Opis", name: content, widget: text }
           - { label: "Zdjęcie", name: image, widget: image }
   - name: "posts"
-    label: "Portfolio"
+    label: "Realizacje"
     label_singular: "Album"
-    folder: "src/pages/portfolio"
+    folder: "src/pages/realizacje"
     create: true
     delete: true
     slug: "{{year}}-{{month}}-{{slug}}"
@@ -117,13 +117,17 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "portfolio-post",
+          default: "realization-post",
         }
       - { label: "Tytuł", name: title, widget: string }
       - { label: "Opis", name: description, widget: string }
+      - { label: "Data publikacji", name: date, widget: datetime }
       - {
           label: "Zdjęcia",
           name: images,
           widget: list,
-          field: {  label: "Zdjęcie", name: image, widget: image }
+          min: 1,
+          max: 100,
+          field:
+            { label: "Zdjęcie", name: image, widget: image, choose_url: false },
         }

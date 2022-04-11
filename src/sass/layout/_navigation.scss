@@ -58,7 +58,7 @@
         text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;
-        // transition: transform 150ms ease;
+        transition: transform 150ms ease;
         &:hover,
         &:focus {
             transform: scale(1.25);

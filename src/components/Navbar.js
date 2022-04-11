@@ -16,77 +16,100 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="Main" id="navigation">
-      <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
-        <div className="navbar-social">
-          <a
-            className="navbar-menu__item"
-            href="https://www.instagram.com/justmemoriesphoto"
+    <>
+      <StaticImage
+        src="../img/eucalyptus_01.png"
+        alt=""
+        placeholder="blurred"
+        layout="constrained"
+        width={600}
+        height={600}
+        aspectRatio={1 / 1}
+        style={{
+          position: "absolute",
+          right: 0,
+          width: "25vw",
+          zIndex: -10,
+        }}
+        imgStyle={{ zIndex: -10 }}
+      />
+      <nav
+        className="navbar"
+        role="navigation"
+        aria-label="Main"
+        id="navigation"
+      >
+        <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
+          <div className="navbar-social">
+            <a
+              className="navbar-menu__item"
+              href="https://www.instagram.com/justmemoriesphoto"
+            >
+              <img
+                src={instagram}
+                alt="Instagram"
+                style={{ width: "1.5em", height: "1.5em" }}
+              />
+            </a>
+            <a
+              className="navbar-menu__item"
+              href="https://www.facebook.com/JustMemoriesPhoto"
+            >
+              <img
+                src={facebook}
+                alt="Facebook"
+                style={{ width: "1.5em", height: "1.5em" }}
+              />
+            </a>
+          </div>
+          <div className="navbar-menu">
+            <Link className="navbar-menu__item" to="/realizacje/">
+              Realizacje
+            </Link>
+            <Link className="navbar-menu__item" to="/oferta/">
+              Oferta
+            </Link>
+            <Link className="navbar-menu__item" to="/o-mnie/">
+              O mnie
+            </Link>
+          </div>
+        </div>
+        <div className="navbar-brand">
+          <Link to="/">
+            <StaticImage
+              src="../img/logo.png"
+              alt="image"
+              fluid={"true"}
+              width={130}
+              height={130}
+              placeholder="blurred"
+              loading="eager"
+            />
+          </Link>
+          <button
+            className={`navbar-burger ${active ? "navbar-menu--is-open" : ""}`}
+            onClick={() => toggleHamburger()}
           >
             <img
-              src={instagram}
-              alt="Instagram"
-              style={{ width: "1.5em", height: "1.5em" }}
+              src={active ? closeMenu : burgerMenu}
+              alt="menu"
+              style={{ width: "2.625em", height: "2.625em" }}
             />
-          </a>
-          <a
-            className="navbar-menu__item"
-            href="https://www.facebook.com/JustMemoriesPhoto"
+          </button>
+        </div>
+        <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
+          <button
+            className="button button--primary"
+            onClick={() => navigate("/strefa-klienta/")}
           >
-            <img
-              src={facebook}
-              alt="Facebook"
-              style={{ width: "1.5em", height: "1.5em" }}
-            />
-          </a>
+            Strefa klienta
+          </button>
+          <button className="button" onClick={() => navigate("/kontakt/")}>
+            Kontakt
+          </button>
         </div>
-        <div className="navbar-menu">
-          <Link className="navbar-menu__item" to="/portfolio/">
-            Portfolio
-          </Link>
-          <Link className="navbar-menu__item" to="/oferta/">
-            Oferta
-          </Link>
-          <Link className="navbar-menu__item" to="/o-mnie/">
-            O mnie
-          </Link>
-        </div>
-      </div>
-      <div className="navbar-brand">
-        <Link to="/">
-          <StaticImage
-            src="../img/logo.png"
-            alt="image"
-            fluid={"true"}
-            width={130}
-            height={130}
-            placeholder="blurred"
-            loading="eager"
-          />
-        </Link>
-        <button
-          className={`navbar-burger ${active ? "navbar-menu--is-open" : ""}`}
-          onClick={() => toggleHamburger()}
-        >
-          <img
-            src={active ? closeMenu : burgerMenu}
-            alt="menu"
-            style={{ width: "2.625em", height: "2.625em" }}
-          />
-        </button>
-      </div>
-      <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
-        <button
-          className="button button--primary"
-          onClick={() => (window.location.href = "/admin")}
-        >
-          Strefa klienta
-        </button>
-        <button className="button" onClick={() => navigate("/kontakt/")}>
-          Kontakt
-        </button>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

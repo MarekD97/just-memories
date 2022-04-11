@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Just Memories | Strona główna",
+    title: "Just Memories",
     description:
       "Wspomnienia to najpiękniejsze co pozostaje z nami na zawsze. Przeszłość jak żywa trwa zapisana w naszych wspomnieniach.",
   },
@@ -37,7 +37,7 @@ module.exports = {
         name: "images",
       },
     },
-    `gatsby-plugin-image`,
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {

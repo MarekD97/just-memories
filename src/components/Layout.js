@@ -5,22 +5,21 @@ import Navbar from "../components/Navbar";
 import "../sass/main.scss";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
   const containerStyle = {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  }
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  };
 
   return (
     <div style={containerStyle}>
       <Helmet>
-        <html lang="en" />
+        <html lang="pl" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
@@ -57,20 +56,6 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <StaticImage 
-        src="../img/eucalyptus_01.png"
-        alt=""
-        placeholder="blurred"
-        layout="constrained"
-        width={600}
-        height={600}
-        aspectRatio={1/1}
-        style={{
-          position: "absolute",
-          right: 0,
-          width: "25vw"
-        }}
-      />
       <Navbar />
       <main>{children}</main>
       <Footer />
