@@ -28,7 +28,7 @@ const Footer = () => {
         height={600}
         aspectRatio={1/1}
       /> */}
-      <div className="footer__row" style={{ alignSelf: "flex-end" }}>
+      {/* <div className="footer__row" style={{ alignSelf: "flex-end" }}>
         <a
           className="button button--primary button--no-transition"
           href="#navigation"
@@ -40,7 +40,7 @@ const Footer = () => {
             style={{ width: "2.5em", height: "2.5em" }}
           />
         </a>
-      </div>
+      </div> */}
       <div className="footer__row">
         <div className="footer__contact">
           <h3>Magdalena Juwko</h3>
