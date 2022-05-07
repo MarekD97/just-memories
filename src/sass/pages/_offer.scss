@@ -1,0 +1,56 @@
+.offer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 1.875em;
+
+    &__card {
+        text-align: center;
+        font-size: 1rem;
+        color: var(--dark-color);
+        padding: 3em 1em;
+        width: 100%;
+        margin: 1.5em 0;
+    }
+
+    &__heading, &__price {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 1.75em 0;
+    }
+    &__subheading {
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 2.5em 0;
+    }
+    &__content {
+        font-weight: 400;
+        margin: 2.5em 0;
+        list-style-position: inside;
+        padding: 0;
+    }
+
+
+    @include tablet {
+        padding: 1.5em 3.75em;
+        &__card { 
+            width: 50%;
+            &:nth-of-type(even) {
+                border-left: 1px solid var(--dark-color);
+            }
+        }
+    }
+    
+    @include desktop {
+        padding: 1.5em 3.75em;
+        &__card { 
+            width: 25%;
+            border-left: 1px solid var(--dark-color);
+            &:nth-of-type(4n - 3) {
+                border-left: none;
+            }
+        }
+
+    }
+}

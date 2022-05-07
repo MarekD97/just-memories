@@ -77,11 +77,12 @@ export const ContactPageTemplate = () => {
           onChange={handleChange}
           rows={4}
         />
-        <input
+        <button
           type="submit"
           className="button button--primary contact__submit"
-          value="Wyślij wiadomość"
-        />
+        >
+          Wyślij wiadomość
+        </button>
       </form>
     </div>
   );

@@ -1,77 +1,77 @@
 .header {
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
     display: grid;
+    grid-area: 1/1;
+    align-self: end;
+    opacity: 0;
+    animation: slideIn 550ms ease-out 1s 1 normal forwards;
+    margin: 1rem 1.875rem;
+  }
+
+  &__title,
+  &__subheading {
+    color: var(--body-color);
+    text-shadow: 0 0 2px var(--dark-color);
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__subheading {
+    margin-top: 0.5rem;
+    font-weight: 400;
+    font-size: 1.125em;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 3.75rem;
     align-items: center;
-    overflow: hidden;
-
-    &__wrapper {
-        position: relative;
-        display: grid;
-        grid-area: 1/1;
-        align-self: end;
-        opacity: 0;
-        animation: slideIn 550ms ease-out 1s 1 normal forwards;
-        margin: 1rem 1.875rem;
+    text-align: center;
+    background-color: var(--gray-color);
+    h2 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
     }
-
-    &__title,
-    &__subheading {
-        color: var(--body-color);
-        text-shadow: 0 0 2px var(--dark-color);
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 300;
     }
-
-    &__title {
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    &__subheading {
-        margin-top: 0.5rem;
-        font-weight: 400;
-        font-size: 1.125em;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        padding: 3.75rem;
-        align-items: center;
-        text-align: center;
-        background-color: var(--gray-color);
-        h2 {
-            font-size: 1.5em;
-            text-transform: uppercase;
-            margin-bottom: 4rem;
-        }
-        h3 {
-            font-size: 1.125rem;
-            font-weight: 300;
-        }
-    }
+  }
 }
 
 @keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-50%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @include desktop {
-    .header {
-        &__wrapper {
-            width: 30%;
-            margin: 0 6.25rem;
-            align-self: center;
-        }
-        &__title {
-            font-size: 3em;
-        }
-        &__subheading {
-            font-size: 1.5em;
-        }
+  .header {
+    &__wrapper {
+      width: 30%;
+      margin: 0 6.25rem;
+      align-self: center;
     }
+    &__title {
+      font-size: 3em;
+    }
+    &__subheading {
+      font-size: 1.5em;
+    }
+  }
 }

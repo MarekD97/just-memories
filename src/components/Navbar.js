@@ -11,34 +11,32 @@ const Navbar = () => {
   const [active, setActive] = React.useState(false);
 
   const toggleHamburger = () => {
-    const newState = !active;
-    setActive(newState);
+    setActive((state) => !state);
   };
 
   return (
     <>
-      <StaticImage
-        src="../img/eucalyptus_01.png"
-        alt=""
-        placeholder="blurred"
-        layout="constrained"
-        width={600}
-        height={600}
-        aspectRatio={1 / 1}
-        style={{
-          position: "absolute",
-          right: 0,
-          width: "25vw",
-          zIndex: -10,
-        }}
-        imgStyle={{ zIndex: -10 }}
-      />
       <nav
         className="navbar"
         role="navigation"
         aria-label="Main"
         id="navigation"
       >
+        <StaticImage
+          src="../img/eucalyptus_01.png"
+          alt=""
+          placeholder="blurred"
+          layout="constrained"
+          width={600}
+          aspectRatio={1 / 1}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            pointerEvents: "none",
+          }}
+          imgStyle={{ zIndex: -1 }}
+        />
         <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
           <div className="navbar-social">
             <a
@@ -98,12 +96,12 @@ const Navbar = () => {
           </button>
         </div>
         <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
-          <button
+          {/* <button
             className="button button--primary"
             onClick={() => navigate("/strefa-klienta/")}
           >
             Strefa klienta
-          </button>
+          </button> */}
           <button className="button" onClick={() => navigate("/kontakt/")}>
             Kontakt
           </button>

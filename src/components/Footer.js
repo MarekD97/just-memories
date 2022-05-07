@@ -69,25 +69,22 @@ const Footer = () => {
             612 345 678
           </a>
         </div>
-        <div className="footer__menu">
+        {/* <div className="footer__menu">
           <Link to="/portfolio/">Portfolio</Link>
           <Link to="/oferta/">Oferta</Link>
           <Link to="/o-mnie/">O mnie</Link>
-        </div>
-        <div className="footer__menu">
+        </div> */}
+        {/* <div className="footer__menu">
           <button
-            className="button button--primary button--no-transition"
+            className="button button--primary"
             onClick={() => (window.location.href = "/admin")}
           >
             Strefa klienta
           </button>
-          <button
-            className="button button--no-transition"
-            onClick={() => navigate("/kontakt/")}
-          >
+          <button className="button" onClick={() => navigate("/kontakt/")}>
             Kontakt
           </button>
-        </div>
+        </div> */}
         <div className="footer__social">
           <a href="https://www.instagram.com/justmemoriesphoto">
             <img

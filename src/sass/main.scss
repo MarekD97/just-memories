@@ -5,8 +5,10 @@
 @import "base/reset";
 @import "base/typography";
 
-@import "components/button";
 @import "components/album";
+@import "components/album_card";
+@import "components/background_image";
+@import "components/button";
 
 @import "layout/navigation";
 @import "layout/header";
@@ -16,5 +18,7 @@
 @import "pages/realizations";
 @import "pages/contact";
 @import "pages/home";
+@import "pages/offer";
+@import "pages/realization_post";
 
 @import "themes/theme";

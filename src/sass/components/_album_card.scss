@@ -1,0 +1,41 @@
+.album-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1.25em;
+  z-index: 1;
+  text-decoration: none;
+  transition: transform 150ms ease;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--dark-color);
+  border: 1px solid var(--gray-color);
+
+  & &__image {
+    transition: transform 300ms ease-in-out;
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  &__link {
+    padding: 1em 1em 0.625em;
+    margin: 1em 0;
+    align-self: flex-start;
+    text-decoration: none;
+    color: var(--dark-color);
+  }
+
+  &__h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.5em 0 0;
+  }
+}

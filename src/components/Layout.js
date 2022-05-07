@@ -4,7 +4,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "../sass/main.scss";
 import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
+// import { withPrefix } from "gatsby";
+
+import appleTouchIcon from "../img/apple-touch-icon.png";
+import favicon16 from "../img/favicon-16x16.png";
+import favicon32 from "../img/favicon-32x32.png";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -23,25 +27,11 @@ const TemplateWrapper = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
 
-        {/* <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix("/")}img/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix("/")}img/favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix("/")}img/favicon-16x16.png`}
-          sizes="16x16"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
+        <link rel="icon" type="image/png" href={favicon32} sizes="32x32" />
+        <link rel="icon" type="image/png" href={favicon16} sizes="16x16" />
 
-        <link
+        {/* <link
           rel="mask-icon"
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
@@ -51,10 +41,10 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
-        <meta
+        {/* <meta
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
-        />
+        /> */}
       </Helmet>
       <Navbar />
       <main>{children}</main>

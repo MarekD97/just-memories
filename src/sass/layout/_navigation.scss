@@ -1,132 +1,127 @@
 .navbar {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1.875em;
-    // background-color: var(--body-color);
-
-    position: relative;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.875em;
+  position: relative;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-start,
 .navbar-end {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    order: 2;
-    // animation: open 350ms ease-in;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  order: 2;
 }
 .navbar-start {
-    flex-direction: column-reverse;
-    margin-top: 2.5em;
+  flex-direction: column-reverse;
+  margin-top: 2.5em;
 }
 @keyframes open {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .navbar-end {
-    margin: 3em 0;
-    flex-direction: column;
-    button:not(:last-of-type) {
-        margin-bottom: 2.5em;
-    }
+  margin: 3em 0;
+  flex-direction: column;
+  button:not(:last-of-type) {
+    margin-bottom: 2.5em;
+  }
 }
 
 .navbar-social {
-    width: 6.625rem;
-    display: flex;
-    justify-content: space-between;
-    margin: 3em 0;
+  width: 6.625rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 3em 0;
 }
 
 .navbar-menu {
-    width: calc(100% - 6.625rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    &__item {
-        padding: 0.5em;
-        margin: 1em 0;
-        color: var(--dark-color);
-        text-decoration: none;
-        text-transform: uppercase;
-        white-space: nowrap;
-        transition: transform 150ms ease;
-        &:hover,
-        &:focus {
-            transform: scale(1.25);
-        }
+  width: calc(100% - 6.625rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  &__item {
+    padding: 0.5em;
+    margin: 1em 0;
+    color: var(--dark-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: transform 150ms ease;
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
     }
+  }
 }
 
 .navbar-brand {
-    order: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    div {
-        // transition: all 350ms ease;
-        width: 105px;
-        height: 105px;
-    }
+  order: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    width: 105px;
+    height: 105px;
+  }
 }
 
 .navbar-burger {
-    padding: 0.094em 0.188em;
-    cursor: pointer;
-    background: transparent;
-    border: none;
+  padding: 0.094em 0.188em;
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
 .navbar-menu--is-open {
-    display: flex;
+  display: flex;
 }
 
 @include desktop {
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        padding: 0 3.75em;
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0 3.75em;
+  }
+  .navbar-brand {
+    order: unset;
+    div {
+      width: 130px;
+      height: 130px;
     }
-    .navbar-brand {
-        order: unset;
-        div {
-            width: 130px;
-            height: 130px;
-        }
+  }
+  .navbar-burger {
+    display: none;
+    &:hover {
+      transform: none;
     }
-    .navbar-burger {
-        display: none;
-        &:hover {
-            transform: none;
-        }
+  }
+  .navbar-start,
+  .navbar-end {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    order: unset;
+    margin: 0;
+  }
+  .navbar-end {
+    justify-content: flex-end;
+    button:not(:last-of-type) {
+      margin-right: 2.5em;
+      margin-bottom: 0;
     }
-    .navbar-start,
-    .navbar-end {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-        order: unset;
-        margin: 0;
-    }
-    .navbar-end {
-        justify-content: flex-end;
-        button:not(:last-of-type) {
-            margin-right: 2.5em;
-            margin-bottom: 0;
-        }
-    }
-    .navbar-menu {
-        flex-direction: row;
-    }
-    .navbar-social {
-        margin: 0;
-    }
+  }
+  .navbar-menu {
+    flex-direction: row;
+  }
+  .navbar-social {
+    margin: 0;
+  }
 }

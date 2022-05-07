@@ -1,15 +1,37 @@
 .home {
-    animation: entering 850ms ease-out;
+  animation: entering 850ms ease-out;
+  background-color: var(--gray-color);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 3.75rem;
+    align-items: center;
+    text-align: center;
+    h2 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 300;
+    }
+
+    @include desktop {
+      padding: 3.75rem 25%;
+    }
+  }
 }
 
 @keyframes entering {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

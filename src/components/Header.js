@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import React from "react";
+import PropTypes from "prop-types";
+
+import BackgroundImage from "./BackgroundImage";
 
 export default function Header(props) {
   const {
@@ -15,69 +16,24 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <header className="header">
-        <div
-          strength={-100}
-          style={{
-            gridArea: "1/1",
-          }}
+        <BackgroundImage
+          image={img}
+          height={height}
+          imagePosition={imgPosition}
         >
-          {img?.url ? (
-            <img
-              src={img}
+          {title && subheading && (
+            <div
+              className="header__wrapper"
               style={{
-                gridArea: "1/1",
-                // You can set a maximum height for the image, if you wish.
-                height: height,
-                width: "100%",
-                objectFit: "cover",
-                objectPosition: imgPosition,
+                textAlign: textAlign,
+                justifySelf: textAlign,
               }}
-              // You can optionally force an aspect ratio for the generated image
-              aspectratio={3 / 1}
-              // This is a presentational image, so the alt should be an empty string
-              alt=""
-              formats={["auto", "webp", "avif"]}
-            />
-          ) : (
-            <GatsbyImage
-              image={img}
-              objectFit={"cover"}
-              objectPosition={imgPosition}
-              style={{
-                gridArea: "1/1",
-                // You can set a maximum height for the image, if you wish.
-                maxHeight: height,
-              }}
-              layout="fullWidth"
-              placeholder="none"
-              // You can optionally force an aspect ratio for the generated image
-              aspectratio={3 / 1}
-              // This is a presentational image, so the alt should be an empty string
-              alt=""
-              formats={["auto", "webp", "avif"]}
-            />
+            >
+              <h1 className="header__title">{title}</h1>
+              <h2 className="header__subheading">{subheading}</h2>
+            </div>
           )}
-        </div>
-        {(title || subheading) && (
-          <div
-            className="header__wrapper"
-            style={{
-              textAlign: textAlign,
-              justifySelf: textAlign,
-            }}
-          >
-            {title && (
-              <h1 className="header__title">
-                {title}
-              </h1>
-            )}
-            {subheading && (
-              <h2 className="header__subheading">
-                {subheading}
-              </h2>
-            )}
-          </div>
-        )}
+        </BackgroundImage>
       </header>
     </React.Fragment>
   );

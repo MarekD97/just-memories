@@ -19,13 +19,13 @@ const AlbumTemplate = ({ data }) => {
     <div className="album">
       <h1 className="album__header">Realizacje</h1>
       <div className="album__row">
-        {posts.map((post, index) => (
-          <Link to={post.slug}>
+        {posts.map((post) => (
+          <Link to={post.slug} key={post.id}>
             <GatsbyImage
-              key={post.id}
               className="album__image"
               image={post.image}
               objectFit={"cover"}
+              width={640}
               loading="lazy"
               layout="constrained"
               alt=""
@@ -59,7 +59,7 @@ const Album = () => (
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "realization-post" } } }
-          limit: 3
+          limit: 5
         ) {
           edges {
             node {

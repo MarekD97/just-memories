@@ -5,18 +5,16 @@ import { getImage, StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import { GatsbyImage } from "gatsby-plugin-image";
+// import { GatsbyImage } from "gatsby-plugin-image";
 import Album from "../components/Album";
+import BackgroundImage from "../components/BackgroundImage";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({ intro, main, footerImage }) => {
-  const heroImage = getImage(intro.image) || intro.image;
-  footerImage = getImage(footerImage) || footerImage;
-
   return (
     <div className="home">
       <Header
-        image={heroImage}
+        image={getImage(intro.image) || intro.image}
         title={intro.heading}
         subheading={intro.subheading}
         textAlign={intro.align}
@@ -36,51 +34,18 @@ export const IndexPageTemplate = ({ intro, main, footerImage }) => {
             width: "31.25vw",
           }}
         />
-        <div strength={-100} className="header__content">
-          <h2 style={{ zIndex: 10 }}>{main.heading}</h2>
-          <h3 style={{ zIndex: 10 }}>{main.description}</h3>
+        <div className="home__content">
+          <h2>{main.heading}</h2>
+          <h3>{main.description}</h3>
         </div>
         <Album />
-        <div
-          style={{
-            width: "100%",
-            height: "50vh",
-          }}
+        <BackgroundImage
+          image={getImage(footerImage) || footerImage}
+          height={480}
+          imagePosition="center center"
         >
-          {footerImage?.url ? (
-            <img
-              src={footerImage}
-              style={{
-                gridArea: "1/1",
-                // You can set a maximum height for the image, if you wish.
-                height: "50vh",
-                width: "100%",
-                objectFit: "cover",
-              }}
-              // You can optionally force an aspect ratio for the generated image
-              aspectratio={3 / 1}
-              // This is a presentational image, so the alt should be an empty string
-              alt=""
-              formats={["auto", "webp", "avif"]}
-            />
-          ) : (
-            <GatsbyImage
-              image={footerImage}
-              objectFit={"cover"}
-              style={{
-                gridArea: "1/1",
-                // You can set a maximum height for the image, if you wish.
-                height: "50vh",
-              }}
-              layout="fixed"
-              // You can optionally force an aspect ratio for the generated image
-              aspectratio={1 / 1}
-              // This is a presentational image, so the alt should be an empty string
-              alt=""
-              formats={["auto", "webp", "avif"]}
-            />
-          )}
-        </div>
+          XYZ
+        </BackgroundImage>
       </section>
     </div>
   );

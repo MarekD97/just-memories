@@ -1,0 +1,47 @@
+.realization-post {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 1.75em;
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1em 0;
+  }
+
+  &__description {
+    font-weight: 1rem;
+    font-weight: 300;
+    margin: 1.5em 0 2em;
+  }
+
+  &__image {
+    margin: 0.5em;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+
+  @include desktop {
+    &__gallery {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      justify-content: center;
+    }
+  }
+}

@@ -1,40 +1,33 @@
 .album {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.75em;
+  background-color: var(--gray-color);
+  overflow: hidden;
+
+  &__header {
+    font-size: 1.5rem;
+    margin-bottom: 4em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.75em;
-    background-color: var(--gray-color);
-
-    &__header {
-        font-size: 1.5rem;
-        margin-bottom: 4em;
-        text-transform: uppercase;
-        text-align: center;
-
-    }
-
-    &__row {
-        display: flex;
-    }
-}
-
-.album-image {
-    padding: 0.625em;
-    img {
-        padding: 0.625em;
-    }
-
+    flex-direction: row;
+  }
 }
 
 @include desktop {
-    .album__row {
-        flex-direction: row;
-        padding: 8rem 4.375rem;
-    }
+  .album__row {
+    flex-direction: row;
+    padding: 8rem 4.375rem;
+  }
 
-    .album-image {
-        &--center {
-            width: 75%;
-        }
+  .album-image {
+    &--center {
+      width: 75%;
     }
+  }
 }

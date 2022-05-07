@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const AlbumCard = ({ image, heading, subheading, slug }) => (
   <Link className="album-card" to={slug}>
     <GatsbyImage
-      className="album-card__image"
       imgClassName="album-card__image"
       image={getImage(image) || image}
       width={400}

@@ -1,0 +1,10 @@
+.background-image {
+  display: grid;
+  align-items: center;
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-area: 1/1;
+  }
+}
