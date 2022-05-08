@@ -5,7 +5,6 @@ import { getImage, StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-// import { GatsbyImage } from "gatsby-plugin-image";
 import Album from "../components/Album";
 import BackgroundImage from "../components/BackgroundImage";
 
@@ -19,25 +18,21 @@ export const IndexPageTemplate = ({ intro, main, footerImage }) => {
         subheading={intro.subheading}
         textAlign={intro.align}
       />
-      <section className="" style={{ position: "relative" }}>
-        <StaticImage
-          src="../img/eucalyptus_02.png"
-          alt=""
-          placeholder="blurred"
-          layout="constrained"
-          width={600}
-          height={600}
-          aspectRatio={1 / 1}
-          style={{
-            position: "absolute",
-            left: 0,
-            width: "31.25vw",
-          }}
-        />
-        <div className="home__content">
-          <h2>{main.heading}</h2>
-          <h3>{main.description}</h3>
-        </div>
+      <main className="home__main">
+        <section className="home__section">
+          <StaticImage
+            className="home__watermark"
+            src="../img/eucalyptus_02.png"
+            alt=""
+            placeholder="blurred"
+            layout="constrained"
+            width={300}
+            height={300}
+            aspectRatio={1 / 1}
+          />
+          <h3>{main.heading}</h3>
+          <p>{main.description}</p>
+        </section>
         <Album />
         <BackgroundImage
           image={getImage(footerImage) || footerImage}
@@ -46,7 +41,7 @@ export const IndexPageTemplate = ({ intro, main, footerImage }) => {
         >
           XYZ
         </BackgroundImage>
-      </section>
+      </main>
     </div>
   );
 };

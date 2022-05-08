@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link, navigate, StaticQuery } from "gatsby";
+import AlbumCard from "./AlbumCard";
 
 const AlbumTemplate = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
@@ -11,32 +12,35 @@ const AlbumTemplate = ({ data }) => {
     return {
       image: getImage(image) || image,
       slug: post.fields.slug,
+      title: post.frontmatter.title,
       id: post.id,
     };
   });
 
   return (
     <div className="album">
-      <h1 className="album__header">Realizacje</h1>
-      <div className="album__row">
+      <h3 className="album__header">Realizacje</h3>
+      <div className="album__content">
         {posts.map((post) => (
-          <Link to={post.slug} key={post.id}>
-            <GatsbyImage
-              className="album__image"
-              image={post.image}
-              objectFit={"cover"}
-              width={640}
-              loading="lazy"
-              layout="constrained"
-              alt=""
-              formats={["auto", "webp", "avif"]}
-            />
-          </Link>
+          // <Link to={post.slug} key={post.id} className="album__link">
+          //   <GatsbyImage
+          //     className="album__image"
+          //     image={post.image}
+          //     objectFit={"cover"}
+          //     width={640}
+          //     loading="lazy"
+          //     layout="constrained"
+          //     alt=""
+          //     formats={["auto", "webp", "avif"]}
+          //   />
+          // </Link>
+          <AlbumCard image={post.image} heading={post.title} slug={post.slug} />
         ))}
       </div>
       <button
         className="button button--primary"
         onClick={() => navigate("/realizacje/")}
+        style={{ alignSelf: "center" }}
       >
         Więcej
       </button>
@@ -59,7 +63,7 @@ const Album = () => (
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "realization-post" } } }
-          limit: 5
+          limit: 3
         ) {
           edges {
             node {
@@ -69,10 +73,11 @@ const Album = () => (
                 slug
               }
               frontmatter {
+                title
                 images {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 640
+                      width: 800
                       height: 480
                       quality: 64
                       layout: CONSTRAINED

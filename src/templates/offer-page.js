@@ -31,7 +31,7 @@ export const OfferPageTemplate = ({ offers }) => {
           <Markdown className="offer__content">
             {offers[activeOffer].content}
           </Markdown>
-          <p className="offer__price">Koszt: {offers[activeOffer].price} zł</p>
+          {/* <p className="offer__price">Koszt: {offers[activeOffer].price} zł</p> */}
         </div>
       </div>
     </>

@@ -4,9 +4,7 @@ import email from "../img/icons/email.svg";
 import phone from "../img/icons/phone.svg";
 import facebook from "../img/icons/facebook.svg";
 import instagram from "../img/icons/instagram.svg";
-import arrowUp from "../img/icons/arrow_up.svg";
-
-import { Link, navigate } from "gatsby";
+// import arrowUp from "../img/icons/arrow_up.svg";
 
 const Footer = () => {
   return (
@@ -44,13 +42,13 @@ const Footer = () => {
       <div className="footer__row">
         <div className="footer__contact">
           <h3>Magdalena Juwko</h3>
-          <a href="mailto:kontakt@justmemoriesphoto.pl">
+          <a href="mailto:photojustmemories@gmail.com">
             <img
               src={email}
               alt="e-mail"
               style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
             />
-            kontakt@justmemoriesphoto.pl
+            photojustmemories@gmail.com
           </a>
           <a href="https://www.facebook.com/JustMemoriesPhoto/">
             <img
@@ -60,13 +58,13 @@ const Footer = () => {
             />
             facebook.com/JustMemoriesPhoto/
           </a>
-          <a href="tel:612345678">
+          <a href="tel:">
             <img
               src={phone}
               alt="phone"
               style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
             />
-            612 345 678
+            *** *** ***
           </a>
         </div>
         {/* <div className="footer__menu">

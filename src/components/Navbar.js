@@ -23,18 +23,14 @@ const Navbar = () => {
         id="navigation"
       >
         <StaticImage
+          className="navbar__watermark"
           src="../img/eucalyptus_01.png"
           alt=""
           placeholder="blurred"
           layout="constrained"
-          width={600}
+          width={300}
+          height={300}
           aspectRatio={1 / 1}
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            pointerEvents: "none",
-          }}
           imgStyle={{ zIndex: -1 }}
         />
         <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>

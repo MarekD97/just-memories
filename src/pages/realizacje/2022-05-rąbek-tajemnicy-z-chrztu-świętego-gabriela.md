@@ -1,6 +1,6 @@
 ---
 templateKey: realization-post
-title: Rąbek tajemnicy z Chrztu Świętego Gabriela 😇
+title: Rąbek tajemnicy z Chrztu Świętego Gabriela
 description: " "
 date: 2022-05-06T19:05:18.538Z
 images:

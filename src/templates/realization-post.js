@@ -22,7 +22,7 @@ export const RealizationPostTemplate = ({
             key={index}
             className="realization-post__image"
             image={getImage(image) || image}
-            height={360}
+            width={800}
             layout="constrained"
             alt=""
           />
@@ -57,7 +57,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM YYYY", locale: "pl")
         images {
           childImageSharp {
-            gatsbyImageData(height: 360, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED)
           }
         }
       }

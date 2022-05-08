@@ -10,7 +10,7 @@ const AlbumCard = ({ image, heading, subheading, slug }) => (
       width={400}
       objectFit={"cover"}
       aspectratio={1 / 1}
-      layout="fullWidth"
+      layout="constrained"
       alt=""
     />
     <span className="album-card__link">

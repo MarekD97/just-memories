@@ -3,31 +3,32 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 1.75em;
-  background-color: var(--gray-color);
+  // background-color: var(--gray-color);
   overflow: hidden;
 
   &__header {
     font-size: 1.5rem;
     margin-bottom: 4em;
     text-transform: uppercase;
-    text-align: center;
+    align-self: center;
+    grid-area: 1 1 1 3;
   }
 
-  &__row {
+  &__content {
     display: flex;
-    flex-direction: row;
-  }
-}
-
-@include desktop {
-  .album__row {
-    flex-direction: row;
-    padding: 8rem 4.375rem;
+    flex-direction: column;
   }
 
-  .album-image {
-    &--center {
-      width: 75%;
+  .button {
+    grid-area: 3 1 3 3;
+  }
+
+  @include desktop {
+    &__content {
+      flex-direction: row;
+      .album-card {
+        flex: 1;
+      }
     }
   }
 }

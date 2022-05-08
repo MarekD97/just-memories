@@ -5,6 +5,20 @@
   position: relative;
   top: 0;
   width: 100%;
+
+  &__watermark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    z-index: -1;
+
+    @include desktop {
+      width: 300px;
+      height: 300px;
+    }
+  }
 }
 
 .navbar-start,
