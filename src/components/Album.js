@@ -34,7 +34,12 @@ const AlbumTemplate = ({ data }) => {
           //     formats={["auto", "webp", "avif"]}
           //   />
           // </Link>
-          <AlbumCard image={post.image} heading={post.title} slug={post.slug} />
+          <AlbumCard
+            key={post.id}
+            image={post.image}
+            heading={post.title}
+            slug={post.slug}
+          />
         ))}
       </div>
       <button

@@ -7,7 +7,7 @@
   width: 100%;
 
   &__watermark {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     right: 0;
     width: 150px;
