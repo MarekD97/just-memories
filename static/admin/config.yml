@@ -9,9 +9,13 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 local_backend: true
+publish_mode: editorial_workflow
+
 media_folder: static/img
 public_folder: /img
 locale: "pl"
+site_url: https://justmemoriesphoto.pl
+logo_url: https://justmemoriesphoto.pl/img/logo.png
 
 collections:
   - name: "pages"
@@ -27,71 +31,23 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
+          - { label: Tytuł strony, name: title, widget: string }
+          - { label: Nagłówek, name: heading, widget: string }
+          - { label: Podtytuł, name: subheading, widget: string }
           - {
-              label: "Główny baner",
-              name: intro,
-              widget: object,
-              fields:
+              label: "Wyrównanie nagłówka",
+              name: "align",
+              widget: "select",
+              options:
                 [
-                  { label: Tytuł, name: heading, widget: string },
-                  { label: Podtytuł, name: subheading, widget: string },
-                  {
-                    label: "Wyrównanie tytułu",
-                    name: "align",
-                    widget: "select",
-                    options:
-                      [
-                        { label: "Do lewej", value: "left" },
-                        { label: "Do środka", value: "center" },
-                        { label: "Do prawej", value: "right" },
-                      ],
-                  },
-                  { label: "Zdjęcie w tle", name: image, widget: image },
+                  { label: "Do lewej", value: "left" },
+                  { label: "Do środka", value: "center" },
+                  { label: "Do prawej", value: "right" },
                 ],
             }
-          - {
-              label: Sekcja główna,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Nagłówek, name: heading, widget: string },
-                  { label: Opis, name: description, widget: text },
-                  {
-                    label: Zdjęcia,
-                    name: images,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Zdjęcie, name: image, widget: image },
-                        { label: Opis, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - { label: "Zdjęcie - stopka", name: footerImage, widget: image }
-      - file: "src/pages/oferta/index.md"
-        label: "Oferta"
-        name: "offer"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "offer-page",
-            }
-          - {
-              label: "Pakiet",
-              name: "offers",
-              widget: list,
-              fields:
-                [
-                  { label: Tytuł, name: heading, widget: string },
-                  { label: Podtytuł, name: subheading, widget: string },
-                  { label: Opis, name: content, widget: markdown },
-                  { label: Koszt, name: price, widget: number },
-                ],
-            }
+          - { label: "Zdjęcie tytułowe", name: headerImage, widget: image }
+          - { label: "Treść", name: body, widget: markdown }
+          - { label: "Zdjęcie przed stopką", name: footerImage, widget: image }
       - file: "src/pages/o-mnie/index.md"
         label: "O mnie"
         name: "about"
@@ -102,12 +58,42 @@ collections:
               widget: "hidden",
               default: "about-page",
             }
+          - { label: "Tytuł strony", name: title, widget: string }
           - { label: "Nagłówek", name: heading, widget: string }
-          - { label: "Opis", name: content, widget: text }
+          - { label: "Opis", name: description, widget: string }
           - { label: "Zdjęcie", name: image, widget: image }
+      - file: "src/pages/kontakt/index.md"
+        label: "Kontakt"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: "Tytuł strony", name: title, widget: string }
+          - { label: "Nagłówek", name: heading, widget: string }
+          - { label: "Opis", name: description, widget: string }
+          - { label: "Zdjęcie", name: image, widget: image }
+  - name: "offers"
+    label: "Oferta"
+    label_singular: "wpis"
+    folder: "src/pages/oferta"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "offer-page",
+        }
+      - { label: "Tytuł strony", name: title, widget: string }
+      - { label: "Treść", name: body, widget: markdown }
   - name: "posts"
     label: "Realizacje"
-    label_singular: "Album"
+    label_singular: "wpis"
     folder: "src/pages/realizacje"
     create: true
     delete: true
@@ -119,7 +105,8 @@ collections:
           widget: "hidden",
           default: "realization-post",
         }
-      - { label: "Tytuł", name: title, widget: string }
+      - { label: "Tytuł strony", name: title, widget: string }
+      - { label: "Nagłówek", name: heading, widget: string }
       - { label: "Opis", name: description, widget: string }
       - { label: "Data publikacji", name: date, widget: datetime }
       - {

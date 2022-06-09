@@ -17,16 +17,26 @@ export const RealizationPostTemplate = ({
         <p className="realization-post__description">{description}</p>
       </div>
       <div className="realization-post__gallery">
-        {images.map((image, index) => (
-          <GatsbyImage
-            key={index}
-            className="realization-post__image"
-            image={getImage(image) || image}
-            width={800}
-            layout="constrained"
-            alt=""
-          />
-        ))}
+        {images.map((image, index) =>
+          image.childImageSharp ? (
+            <GatsbyImage
+              key={index}
+              className="realization-post__image"
+              image={getImage(image) || image}
+              width={800}
+              layout="constrained"
+              alt=""
+            />
+          ) : (
+            <img
+              key={index}
+              className="realization-post__image"
+              style={{ maxWidth: 800, width: "100%" }}
+              src={image}
+              alt=""
+            />
+          )
+        )}
       </div>
     </div>
   );

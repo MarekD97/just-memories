@@ -15,4 +15,4 @@ CMS.registerLocale("pl", pl);
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("offer", OfferPagePreview);
-CMS.registerPreviewTemplate("realization-post", RealizationPostPreview);
+CMS.registerPreviewTemplate("posts", RealizationPostPreview);

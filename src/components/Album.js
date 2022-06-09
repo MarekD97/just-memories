@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { graphql, Link, navigate, StaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { graphql, navigate, StaticQuery } from "gatsby";
 import AlbumCard from "./AlbumCard";
 
 const AlbumTemplate = ({ data }) => {
@@ -22,18 +22,6 @@ const AlbumTemplate = ({ data }) => {
       <h3 className="album__header">Realizacje</h3>
       <div className="album__content">
         {posts.map((post) => (
-          // <Link to={post.slug} key={post.id} className="album__link">
-          //   <GatsbyImage
-          //     className="album__image"
-          //     image={post.image}
-          //     objectFit={"cover"}
-          //     width={640}
-          //     loading="lazy"
-          //     layout="constrained"
-          //     alt=""
-          //     formats={["auto", "webp", "avif"]}
-          //   />
-          // </Link>
           <AlbumCard
             key={post.id}
             image={post.image}

@@ -7,7 +7,7 @@ export default function Header(props) {
   const {
     height = 740,
     image: img,
-    title,
+    heading,
     subheading,
     imgPosition = "center 30%",
     textAlign,
@@ -21,7 +21,7 @@ export default function Header(props) {
           height={height}
           imagePosition={imgPosition}
         >
-          {title && subheading && (
+          {heading && subheading && (
             <div
               className="header__wrapper"
               style={{
@@ -29,7 +29,7 @@ export default function Header(props) {
                 justifySelf: textAlign,
               }}
             >
-              <h1 className="header__title">{title}</h1>
+              <h1 className="header__title">{heading}</h1>
               <h2 className="header__subheading">{subheading}</h2>
             </div>
           )}
@@ -41,7 +41,7 @@ export default function Header(props) {
 
 Header.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
+  heading: PropTypes.string,
   height: PropTypes.number,
   textAlign: PropTypes.string,
   subheading: PropTypes.string,

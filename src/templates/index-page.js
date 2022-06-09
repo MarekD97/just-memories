@@ -9,14 +9,21 @@ import Album from "../components/Album";
 import BackgroundImage from "../components/BackgroundImage";
 
 // eslint-disable-next-line
-export const IndexPageTemplate = ({ intro, main, footerImage }) => {
+export const IndexPageTemplate = ({
+  heading,
+  subheading,
+  align,
+  headerImage,
+  content,
+  footerImage,
+}) => {
   return (
     <div className="home">
       <Header
-        image={getImage(intro.image) || intro.image}
-        title={intro.heading}
-        subheading={intro.subheading}
-        textAlign={intro.align}
+        image={getImage(headerImage) || headerImage}
+        heading={heading}
+        subheading={subheading}
+        textAlign={align}
       />
       <main className="home__main">
         <section className="home__section">
@@ -30,39 +37,29 @@ export const IndexPageTemplate = ({ intro, main, footerImage }) => {
             height={300}
             aspectRatio={1 / 1}
           />
-          <h3>{main.heading}</h3>
-          <p>{main.description}</p>
+          {typeof content === "object" ? (
+            <div>{content}</div>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          )}
         </section>
         <Album />
         <BackgroundImage
           image={getImage(footerImage) || footerImage}
           height={480}
           imagePosition="center center"
-        >
-          XYZ
-        </BackgroundImage>
+        />
       </main>
     </div>
   );
 };
 
 IndexPageTemplate.propTypes = {
-  intro: PropTypes.shape({
-    heading: PropTypes.string,
-    subheading: PropTypes.string,
-    align: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  }),
-  main: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        alt: PropTypes.string,
-      })
-    ),
-  }),
+  heading: PropTypes.string,
+  subheading: PropTypes.string,
+  align: PropTypes.string,
+  headerImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  content: PropTypes.string,
   footerImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
@@ -72,8 +69,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        intro={frontmatter.intro}
-        main={frontmatter.main}
+        heading={frontmatter.heading}
+        subheading={frontmatter.subheading}
+        align={frontmatter.align}
+        headerImage={frontmatter.headerImage}
+        content={data.markdownRemark.html}
         footerImage={frontmatter.footerImage}
       />
     </Layout>
@@ -83,6 +83,7 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -93,27 +94,14 @@ export default IndexPage;
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
-        intro {
-          heading
-          subheading
-          align
-          image {
-            childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-            }
-          }
-        }
-        main {
-          heading
-          description
-          images {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 640, quality: 100, layout: CONSTRAINED)
-              }
-            }
-            alt
+        heading
+        subheading
+        align
+        headerImage {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         footerImage {

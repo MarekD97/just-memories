@@ -20,6 +20,12 @@ const TemplateWrapper = ({ children }) => {
     justifyContent: "space-between",
   };
 
+  window.addEventListener("keydown", (event) => {
+    if (event.key === ".") {
+      window.location.href = "/admin/";
+    }
+  });
+
   return (
     <div style={containerStyle}>
       <Helmet>

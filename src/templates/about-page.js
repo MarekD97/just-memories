@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ heading, content, image }) => {
+export const AboutPageTemplate = ({ heading, description, image }) => {
   image = getImage(image) || image;
   return (
     <div className="about">
@@ -38,7 +38,7 @@ export const AboutPageTemplate = ({ heading, content, image }) => {
       </div>
       <div className="about__column">
         <h2 className="about__h2">{heading}</h2>
-        <h3 className="about__h3">{content}</h3>
+        <h3 className="about__h3">{description}</h3>
       </div>
     </div>
   );
@@ -46,7 +46,7 @@ export const AboutPageTemplate = ({ heading, content, image }) => {
 
 AboutPageTemplate.propTypes = {
   heading: PropTypes.string,
-  content: PropTypes.string,
+  description: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
@@ -57,7 +57,7 @@ const AboutPage = ({ data }) => {
     <Layout>
       <AboutPageTemplate
         heading={frontmatter.heading}
-        content={frontmatter.content}
+        description={frontmatter.description}
         image={frontmatter.image}
       />
     </Layout>
@@ -79,7 +79,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       frontmatter {
         heading
-        content
+        description
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, height: 720, layout: CONSTRAINED)
