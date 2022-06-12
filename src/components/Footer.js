@@ -42,13 +42,13 @@ const Footer = () => {
       <div className="footer__row">
         <div className="footer__contact">
           <h3>Magdalena Juwko</h3>
-          <a href="mailto:photojustmemories@gmail.com">
+          <a href="mailto:kontakt@justmemoriesphoto.pl">
             <img
               src={email}
               alt="e-mail"
               style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
             />
-            photojustmemories@gmail.com
+            kontakt@justmemoriesphoto.pl
           </a>
           <a href="https://www.facebook.com/JustMemoriesPhoto/">
             <img
@@ -58,14 +58,14 @@ const Footer = () => {
             />
             facebook.com/JustMemoriesPhoto/
           </a>
-          <a href="tel:">
+          {/* <a href="tel:">
             <img
               src={phone}
               alt="phone"
               style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
             />
             *** *** ***
-          </a>
+          </a> */}
         </div>
         {/* <div className="footer__menu">
           <Link to="/portfolio/">Portfolio</Link>
