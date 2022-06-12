@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "../sass/main.scss";
 import useSiteMetadata from "./SiteMetadata";
-// import { withPrefix } from "gatsby";
 
 import appleTouchIcon from "../img/apple-touch-icon.png";
 import favicon16 from "../img/favicon-16x16.png";
@@ -19,12 +18,6 @@ const TemplateWrapper = ({ children }) => {
     flexDirection: "column",
     justifyContent: "space-between",
   };
-
-  window.addEventListener("keydown", (event) => {
-    if (event.key === ".") {
-      window.location.href = "/admin/";
-    }
-  });
 
   return (
     <div style={containerStyle}>
