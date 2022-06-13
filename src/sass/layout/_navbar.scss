@@ -139,3 +139,47 @@
     margin: 0;
   }
 }
+
+.dropdown {
+  position: relative;
+  &__menu {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 1em 0 0;
+    white-space: nowrap;
+    list-style-type: "-";
+    list-style: inside;
+
+    &:hover {
+      display: block;
+    }
+  }
+
+  &__item {
+    padding: 1em;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    a {
+      color: var(--dark-color);
+      text-decoration: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0.8rem;
+      right: -1rem;
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-top: 0.5rem solid var(--dark-color);
+    }
+  }
+
+  &:hover &__menu {
+    display: block;
+  }
+}

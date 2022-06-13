@@ -1,5 +1,6 @@
 ---
 templateKey: offer-page
+title: Pakiet Ekstra
 offers:
   - heading: Pakiet Standard
     subheading: sesja w plenerze

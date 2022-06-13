@@ -29,6 +29,7 @@ export const ContactPageTemplate = () => {
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch((error) => alert(error));
+    console.log(formState);
   };
   return (
     <div className="contact">
@@ -52,14 +53,14 @@ export const ContactPageTemplate = () => {
           placeholder="Imię i nazwisko"
           onChange={handleChange}
         />
-        <input
+        {/* <input
           type="tel"
           name="phone"
           className="contact__input"
           id="form_phone"
           placeholder="Telefon"
           onChange={handleChange}
-        />
+        /> */}
         <input
           type="email"
           name="email"

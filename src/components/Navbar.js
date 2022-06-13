@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
+import { graphql, Link, navigate, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import instagram from "../img/icons/instagram.svg";
@@ -10,9 +10,29 @@ import closeMenu from "../img/icons/menu_close.svg";
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
 
-  const toggleHamburger = () => {
-    setActive((state) => !state);
-  };
+  const {
+    allMarkdownRemark: { edges: offers },
+  } = useStaticQuery(graphql`
+    query OffersQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "offer-page" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const toggleHamburger = () => setActive((state) => !state);
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main" id="navigation">
@@ -54,9 +74,18 @@ const Navbar = () => {
           <Link className="navbar-menu__item" to="/realizacje/">
             Realizacje
           </Link>
-          <Link className="navbar-menu__item" to="/oferta/">
-            Oferta
-          </Link>
+          <div>
+            <Link className="navbar-menu__item" to="/oferta/">
+              Oferta
+            </Link>
+            <ul className="dropdown__menu">
+              {offers.map(({ node: offer }) => (
+                <li key={offer.id} className="dropdown__item">
+                  <Link to={offer.fields.slug}>{offer.frontmatter.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <Link className="navbar-menu__item" to="/o-mnie/">
             O mnie
           </Link>
