@@ -74,17 +74,21 @@ const Navbar = () => {
           <Link className="navbar-menu__item" to="/realizacje/">
             Realizacje
           </Link>
-          <div>
-            <Link className="navbar-menu__item" to="/oferta/">
+          <div className="dropdown">
+            <Link className="navbar-menu__item dropdown__icon" to="/oferta/">
               Oferta
             </Link>
-            <ul className="dropdown__menu">
+            <div className="dropdown__menu">
               {offers.map(({ node: offer }) => (
-                <li key={offer.id} className="dropdown__item">
-                  <Link to={offer.fields.slug}>{offer.frontmatter.title}</Link>
-                </li>
+                <Link
+                  key={offer.id}
+                  className="dropdown__item"
+                  to={offer.fields.slug}
+                >
+                  {offer.frontmatter.title}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
           <Link className="navbar-menu__item" to="/o-mnie/">
             O mnie

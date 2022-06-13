@@ -1,16 +1,16 @@
 ---
 templateKey: offer-page
-title: Pakiet premium
+title: Pakiet pro
 ---
 
-# PAKIET PREMIUM
+# PAKIET PRO
 
-sesja w plenerze
+sesja
 
-- 15 ujęć w formie elektronicznej
+- 30 ujęć w formie elektronicznej
 - wydruki 10x15
 - retusz
 
-## Koszt: 350 zł
+## Koszt: 550 zł
 
 ![](/img/265186880_377460044066545_3800570343586476644_n.jpg)
