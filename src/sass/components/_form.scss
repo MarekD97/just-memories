@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 1em;
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: 1em;
+    }
+  }
+
+  &__input {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    width: 100%;
+  }
+
+  &__textarea {
+    @extend .form__input;
+    resize: vertical;
+    min-height: 8em;
+  }
+
+  @include desktop {
+    max-width: 1024px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
+import { graphql, Link, navigate, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import instagram from "../img/icons/instagram.svg";
@@ -10,9 +10,7 @@ import closeMenu from "../img/icons/menu_close.svg";
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
 
-  const toggleHamburger = () => {
-    setActive((state) => !state);
-  };
+  const toggleHamburger = () => setActive((state) => !state);
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main" id="navigation">
@@ -85,12 +83,6 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
-        {/* <button
-            className="button button--primary"
-            onClick={() => navigate("/strefa-klienta/")}
-          >
-            Strefa klienta
-          </button> */}
         <button className="button" onClick={() => navigate("/kontakt/")}>
           Kontakt
         </button>

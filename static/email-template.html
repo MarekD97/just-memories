@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email template</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+        html,
+        body,
+        form,
+        fieldset,
+        table,
+        tr,
+        td,
+        img {
+            margin: 0;
+            padding: 0;
+            font-family: "Lato", sans-serif;
+        }
+        body {
+            font-size: 1em;
+        }
+        .logo {
+            width: 130px;
+            height: 130px;
+        }
+        .row {
+            padding: 2em 1.5em;
+        }
+        .content {
+            background-color: #f4f4f4;
+            font-size: 1.25rem;
+        }
+        .email {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="row">
+            <h1>Wiadomość od: {{name}}</h1>
+            <a class="email" href="mailto:{{email}}">Odpowiedz na adres: {{email}}</a>
+        </div>
+        <div class="row content">
+            <p>{{message}}</p>
+        </div>
+    </div>
+</body>
+</html>
