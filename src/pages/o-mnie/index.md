@@ -2,6 +2,6 @@
 templateKey: about-page
 title: O mnie
 heading: Informacje o mnie
-description: " "
+description: Wkrótce...
 image: /img/logo.png
 ---
