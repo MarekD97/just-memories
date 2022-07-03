@@ -9,10 +9,8 @@ export const ContactPageTemplate = () => {
   const [status, setStatus] = useState();
   const [error, setError] = useState();
 
-  const sendMessage = (e) => {
-    e.preventDefault();
-    const { name, email, message } = e.target.elements;
-    // check if container is valid
+  const sendMessage = (fields) => {
+    const { name, email, message } = fields;
 
     let details = {
       name: name.value,

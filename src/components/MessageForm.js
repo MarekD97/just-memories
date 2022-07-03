@@ -1,8 +1,23 @@
 import React from "react";
 
 const MessageForm = ({ onSubmit }) => {
+  const contactSubmit = (event) => {
+    event.preventDefault();
+    const fields = event.target.elements;
+    const isValid = validateFields(fields);
+    if (isValid) onSubmit(fields);
+  };
+
+  const validateFields = (fields) => {
+    const { name, email, message } = fields;
+    const nameValid = name.checkValidity();
+    const emailValid = email.checkValidity();
+    const messageValid = message.checkValidity();
+    return nameValid && emailValid && messageValid;
+  };
+
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form" onSubmit={contactSubmit}>
       <div className="form__row">
         <input
           type="text"
@@ -10,6 +25,8 @@ const MessageForm = ({ onSubmit }) => {
           className="form__input"
           id="formName"
           placeholder="Imię i nazwisko"
+          minLength={6}
+          required
         />
         <input
           type="email"
@@ -17,6 +34,7 @@ const MessageForm = ({ onSubmit }) => {
           className="form__input"
           id="form_email"
           placeholder="Email"
+          required
         />
       </div>
       <textarea
@@ -26,6 +44,8 @@ const MessageForm = ({ onSubmit }) => {
         id="form_message"
         placeholder="Wiadomość"
         rows={4}
+        minLength={10}
+        required
       />
       <button type="submit" className="button button--primary">
         Wyślij wiadomość
