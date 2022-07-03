@@ -4,7 +4,12 @@ import Layout from "../components/Layout";
 
 //eslint-disable-next-line
 export const OfferPageTemplate = ({ content }) => {
-  return <div dangerouslySetInnerHTML={{ __html: content }}></div>;
+  return (
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      dangerouslySetInnerHTML={{ __html: content }}
+    ></div>
+  );
 };
 
 const OfferPage = ({ data }) => {

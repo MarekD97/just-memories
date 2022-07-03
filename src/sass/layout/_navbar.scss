@@ -140,51 +140,57 @@
   }
 }
 
-.dropdown {
-  position: relative;
-  &__menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    margin: 0;
-    padding: 1em 0 0;
-    white-space: nowrap;
-    z-index: 10;
+// .dropdown {
+//   position: relative;
+//   &__menu {
+//     display: none;
+//     flex-direction: column;
+//     margin: 0;
+//     padding: 1em 0 0;
+//     white-space: nowrap;
+//     z-index: 10;
 
-    &:hover {
-      display: block;
-    }
-  }
+//     &:hover {
+//       display: block;
+//     }
+//   }
 
-  &__item {
-    padding: 1em;
-    text-transform: uppercase;
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+//   @include desktop {
+//     align-items: center;
+//     &__menu {
+//       position: absolute;
+//     }
+//   }
 
-  &__icon {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0.8rem;
-      right: -1rem;
-      border-left: 0.5rem solid transparent;
-      border-right: 0.5rem solid transparent;
-      border-top: 0.5rem solid var(--dark-color);
-      transition: transform 350ms ease-in-out;
-    }
-  }
+//   &__item {
+//     padding: 1em;
+//     text-transform: uppercase;
+//     background-color: var(--primary-color);
+//     color: var(--dark-color);
+//     text-decoration: none;
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
 
-  &:hover &__menu {
-    display: flex;
-  }
-  &:hover &__icon::after {
-    transform: scaleY(-1);
-  }
-}
+//   &__icon {
+//     position: relative;
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       top: 0.8rem;
+//       right: -1rem;
+//       border-left: 0.5rem solid transparent;
+//       border-right: 0.5rem solid transparent;
+//       border-top: 0.5rem solid var(--dark-color);
+//       transition: transform 350ms ease-in-out;
+//     }
+//   }
+
+//   &:hover &__menu {
+//     display: flex;
+//   }
+//   &:hover &__icon::after {
+//     transform: scaleY(-1);
+//   }
+// }

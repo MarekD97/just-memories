@@ -10,28 +10,6 @@ import closeMenu from "../img/icons/menu_close.svg";
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
 
-  const {
-    allMarkdownRemark: { edges: offers },
-  } = useStaticQuery(graphql`
-    query OffersQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "offer-page" } } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
-    }
-  `);
-
   const toggleHamburger = () => setActive((state) => !state);
 
   return (
@@ -74,22 +52,9 @@ const Navbar = () => {
           <Link className="navbar-menu__item" to="/realizacje/">
             Realizacje
           </Link>
-          <div className="dropdown">
-            <Link className="navbar-menu__item dropdown__icon" to="/oferta/">
-              Oferta
-            </Link>
-            <div className="dropdown__menu">
-              {offers.map(({ node: offer }) => (
-                <Link
-                  key={offer.id}
-                  className="dropdown__item"
-                  to={offer.fields.slug}
-                >
-                  {offer.frontmatter.title}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Link className="navbar-menu__item" to="/oferta/">
+            Oferta
+          </Link>
           <Link className="navbar-menu__item" to="/o-mnie/">
             O mnie
           </Link>
@@ -118,12 +83,6 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`navbar-end ${active ? "navbar-menu--is-open" : ""}`}>
-        {/* <button
-            className="button button--primary"
-            onClick={() => navigate("/strefa-klienta/")}
-          >
-            Strefa klienta
-          </button> */}
         <button className="button" onClick={() => navigate("/kontakt/")}>
           Kontakt
         </button>

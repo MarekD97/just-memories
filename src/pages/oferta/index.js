@@ -5,9 +5,9 @@ import Layout from "../../components/Layout";
 //eslint-disable-next-line
 export const IndexOfferPageTemplate = ({ offers }) => {
   return (
-    <div className="offer">
+    <div className="container">
       {offers.map(({ node: offer }) => (
-        <Link to={offer.fields.slug}>
+        <Link to={offer.fields.slug} className="navbar-menu__item">
           {offer.frontmatter.title}
           <br />
         </Link>
