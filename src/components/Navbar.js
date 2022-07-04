@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link, navigate, useStaticQuery } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import instagram from "../img/icons/instagram.svg";
@@ -15,15 +15,13 @@ const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="Main" id="navigation">
       <StaticImage
-        className="navbar__watermark"
+        className="watermark watermark--right"
         src="../img/eucalyptus_01.png"
         alt=""
         placeholder="blurred"
         layout="constrained"
         width={300}
-        height={300}
         aspectRatio={1 / 1}
-        imgStyle={{ zIndex: -1 }}
       />
       <div className={`navbar-start ${active ? "navbar-menu--is-open" : ""}`}>
         <div className="navbar-social">

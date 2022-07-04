@@ -1,44 +1,30 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import email from "../img/icons/email.svg";
-import phone from "../img/icons/phone.svg";
 import facebook from "../img/icons/facebook.svg";
 import instagram from "../img/icons/instagram.svg";
-// import arrowUp from "../img/icons/arrow_up.svg";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* <StaticImage 
+      <StaticImage
+        className="watermark watermark--bottom"
         src="../img/eucalyptus_04.png"
         style={{
-          transform: 'rotate(-90deg)',
+          transform: "rotate(-90deg)",
           position: "absolute",
           left: 0,
           bottom: 0,
-          width: "45vw",
-          maxWidth: '600px',
+          zZndex: -1,
         }}
         alt=""
         placeholder="blurred"
         layout="constrained"
-        width={600}
-        height={600}
-        aspectRatio={1/1}
-      /> */}
-      {/* <div className="footer__row" style={{ alignSelf: "flex-end" }}>
-        <a
-          className="button button--primary button--no-transition"
-          href="#navigation"
-          style={{ width: "auto" }}
-        >
-          <img
-            src={arrowUp}
-            alt="Na początek strony"
-            style={{ width: "2.5em", height: "2.5em" }}
-          />
-        </a>
-      </div> */}
+        width={300}
+        aspectRatio={1 / 1}
+        imgStyle={{ zIndex: -1 }}
+      />
       <div className="footer__row">
         <div className="footer__contact">
           <h3>Magdalena Juwko</h3>
@@ -50,7 +36,7 @@ const Footer = () => {
             />
             kontakt@justmemoriesphoto.pl
           </a>
-          <a href="https://www.facebook.com/JustMemoriesPhoto/">
+          {/* <a href="https://www.facebook.com/JustMemoriesPhoto/">
             <img
               src={facebook}
               alt="facebook"
@@ -58,31 +44,15 @@ const Footer = () => {
             />
             facebook.com/JustMemoriesPhoto/
           </a>
-          {/* <a href="tel:">
+          <a href="https://www.instagram.com/justmemoriesphoto">
             <img
-              src={phone}
-              alt="phone"
+              src={instagram}
+              alt="instagram"
               style={{ width: "1.5em", height: "1.5em", marginRight: "1em" }}
             />
-            *** *** ***
+            instagram.com/justmemoriesphoto
           </a> */}
         </div>
-        {/* <div className="footer__menu">
-          <Link to="/portfolio/">Portfolio</Link>
-          <Link to="/oferta/">Oferta</Link>
-          <Link to="/o-mnie/">O mnie</Link>
-        </div> */}
-        {/* <div className="footer__menu">
-          <button
-            className="button button--primary"
-            onClick={() => (window.location.href = "/admin")}
-          >
-            Strefa klienta
-          </button>
-          <button className="button" onClick={() => navigate("/kontakt/")}>
-            Kontakt
-          </button>
-        </div> */}
         <div className="footer__social">
           <a href="https://www.instagram.com/justmemoriesphoto">
             <img

@@ -14,6 +14,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
         headerImage={getAsset(data.headerImage)}
         content={widgetFor("body")}
         footerImage={getAsset(data.footerImage)}
+        cmsMode={true}
       />
     );
   } else {

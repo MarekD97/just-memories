@@ -1,86 +1,89 @@
 .footer {
-    display: flex;
-    position: relative;
-    background: var(--gray-color);
-    padding: 3.75em 1.875em 0;
-    flex-direction: column;
+  display: flex;
+  position: relative;
+  background: var(--gray-color);
+  padding: 3.75em 1.875em 0;
+  flex-direction: column;
+  isolation: isolate;
 
-    &__contact {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        h3, a {
-            margin: 0.5em 0;
-            display: flex;
-            align-items: center;
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h3,
+    a {
+      margin: 0.5em 0;
+      display: flex;
+      align-items: center;
+      color: var(--dark-color);
+      text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin: 2.5em 0;
+
+    a {
+      padding: 0.5em;
+      margin: 0 3.75em 0 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  &__bottom {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding: 1.25em 0;
+    span:first-of-type::after {
+      content: " • ";
+    }
+  }
+
+  @include desktop {
+    padding: 3.75em 3.75em 0;
 
     &__row {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+      flex-direction: row;
     }
 
-    &__menu {
-        display: none;
+    &__contact {
+      margin-bottom: 3.75em;
     }
 
     &__social {
-        display: flex;
-        justify-content: center;
-        margin: 2.5em 0;
-
-        a {
-            padding: 0.5em;
-            margin: 0 3.75em 0 0;
-            &:last-of-type {
-                margin-right: 0;
-            }
-        }
-    }
-    &__bottom {
-        text-align: center;
-        border-top: 1px solid #ccc;
-        padding: 1.25em 0;
-        span:first-of-type::after {
-            content: ' • '
-        }
+      align-self: flex-end;
     }
 
-    @include desktop {
-        padding: 3.75em 3.75em 0;
-
-        &__row {
-            flex-direction: row;
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      a {
+        text-decoration: none;
+        color: var(--dark-color);
+        &:hover {
+          text-decoration: underline;
         }
-        
-        &__contact {
-            margin-bottom: 3.75em;
-        }
-
-        &__social {
-            align-self: flex-end;
-        }
-
-        &__menu {
-            display: flex;
-            flex-direction: column;
-            a {
-                text-decoration: none;
-                color: var(--dark-color);
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-            a, button {
-                margin: 0.9375em 0;
-            }
-        }
+      }
+      a,
+      button {
+        margin: 0.9375em 0;
+      }
     }
+  }
 }

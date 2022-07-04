@@ -1,0 +1,23 @@
+.watermark {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+
+  &--right {
+    left: auto;
+    right: 0;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: 0;
+  }
+
+  @include desktop {
+    width: 300px;
+    height: 300px;
+  }
+}

@@ -16,6 +16,7 @@ export const IndexPageTemplate = ({
   headerImage,
   content,
   footerImage,
+  cmsMode,
 }) => {
   return (
     <div className="home">
@@ -27,23 +28,25 @@ export const IndexPageTemplate = ({
       />
       <main className="home__main">
         <section className="home__section">
-          <StaticImage
-            className="home__watermark"
-            src="../img/eucalyptus_02.png"
-            alt=""
-            placeholder="blurred"
-            layout="constrained"
-            width={300}
-            height={300}
-            aspectRatio={1 / 1}
-          />
+          {!cmsMode && (
+            <StaticImage
+              className="watermark"
+              style={{ left: 0 }}
+              src="../img/eucalyptus_02.png"
+              alt=""
+              placeholder="blurred"
+              layout="constrained"
+              width={300}
+              aspectRatio={1 / 1}
+            />
+          )}
           {typeof content === "object" ? (
             <div>{content}</div>
           ) : (
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
           )}
         </section>
-        <Album />
+        {!cmsMode && <Album />}
         <BackgroundImage
           image={getImage(footerImage) || footerImage}
           height={480}
@@ -61,6 +64,7 @@ IndexPageTemplate.propTypes = {
   headerImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   content: PropTypes.string,
   footerImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  cmsMode: PropTypes.bool,
 };
 
 const IndexPage = ({ data }) => {
@@ -75,6 +79,7 @@ const IndexPage = ({ data }) => {
         headerImage={frontmatter.headerImage}
         content={data.markdownRemark.html}
         footerImage={frontmatter.footerImage}
+        cmsMode={false}
       />
     </Layout>
   );
