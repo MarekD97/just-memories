@@ -1,7 +1,4 @@
 const nodemailer = require("nodemailer");
-const path = require("path");
-const fs = require("fs");
-const handlebars = require("handlebars");
 
 module.exports.handler = async function (event, context) {
   const req = JSON.parse(event.body);

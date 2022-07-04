@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: production
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
+    create: "Create {{collection.name}} “{{slug}}”"
+    update: "Update {{collection.name}} “{{slug}}”"
+    delete: "Delete {{collection.name}} “{{slug}}”"
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
@@ -57,20 +57,6 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "about-page",
-            }
-          - { label: "Tytuł strony", name: title, widget: string }
-          - { label: "Nagłówek", name: heading, widget: string }
-          - { label: "Opis", name: description, widget: string }
-          - { label: "Zdjęcie", name: image, widget: image }
-      - file: "src/pages/kontakt/index.md"
-        label: "Kontakt"
-        name: "contact"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "contact-page",
             }
           - { label: "Tytuł strony", name: title, widget: string }
           - { label: "Nagłówek", name: heading, widget: string }
